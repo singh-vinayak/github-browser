@@ -5,7 +5,9 @@ export default function AddRepoButton(props) {
     
     return (
         <div style={{
-            "border":"1px solid white"
+            "boxSizing":"border-box",
+            "border":"1px solid green",
+            "width":"100%",
             }}>
             <button className='add-button' onClick={()=> setShow(true)}>+</button>
             <Modal  show={show} onClose={()=> setShow(false)} />

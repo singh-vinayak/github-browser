@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Repository() {
+function Repository({data}) {
     return (
-        <div className="repo">
-            Repo will be here
+        <div className="repo"  >
+            {data.name}
         </div>
     );
 }

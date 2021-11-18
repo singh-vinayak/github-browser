@@ -8,12 +8,13 @@ export default function Modal({show, onClose})
     const [org, setOrg] = useState('');
     const [error, setError] = useState('');
 
-    const { repoList, setRepoList } = useContext(RepositoryContext);
+    const { setRepoList } = useContext(RepositoryContext);
 
-    // useEffect(() => {
-    //     console.log(name);
-    //     console.log(org);
-    // }, [org, name]);
+    useEffect(() => {
+        // console.log(name);
+        // console.log(org);
+        setError('');
+    }, [org, name]);
 
     if(!show){
         return null;

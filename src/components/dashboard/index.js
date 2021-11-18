@@ -21,7 +21,13 @@ function Dashboard() {
                 </div>
                 <div className="main--section">
                     <div className="left--pane">
-                        <Repository />
+                        <div className='repoList'>
+                            {repoList.length === 0 ?
+                                <div className="repo">
+                                    Repo will be here
+                                </div> :
+                                repoList.map((repo, i) => <Repository key={i} data={repo} />)}
+                        </div>
                         <AddRepoButton />
                     </div>
                     <div className="right--pane">
