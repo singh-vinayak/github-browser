@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
+import RepositoryContext from '../../contexts/repositoryList'
 
 export default function Modal({show, onClose})
 {
@@ -7,10 +8,12 @@ export default function Modal({show, onClose})
     const [org, setOrg] = useState('');
     const [error, setError] = useState('');
 
-    useEffect(() => {
-        console.log(name);
-        console.log(org);
-    }, [org, name]);
+    const { repoList, setRepoList } = useContext(RepositoryContext);
+
+    // useEffect(() => {
+    //     console.log(name);
+    //     console.log(org);
+    // }, [org, name]);
 
     if(!show){
         return null;
@@ -41,6 +44,11 @@ export default function Modal({show, onClose})
                             handleSubmit()
                             .then(data =>{
                                 console.log(data);
+                                const newRepo = {
+                                    "name": name,
+                                    "ownerName": org
+                                }
+                                //setRepoList(prevArray => [...prevArray, newRepo]);
                                 onClose();
                             })
                             .catch(error => {
