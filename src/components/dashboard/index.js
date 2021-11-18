@@ -7,14 +7,14 @@ import RepositoryContext from '../../contexts/repositoryList'
 function Dashboard() {
 
     const initialState=[];
-    const [repoList, setRepoList] = useState([]);
+    const [repoList, setRepoList] = useState(initialState);
 
     useEffect(()=>{
         console.log(repoList);
     },[repoList]);
 
     return (
-        <RepositoryContext.Provider value={repoList, setRepoList}>
+        <RepositoryContext.Provider value={{repoList, setRepoList}}>
             <div className="dashboard">
                 <div className="top--section">
                     <Header text={"Github Browser"} />
