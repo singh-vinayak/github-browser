@@ -3,11 +3,13 @@ import Header from '../header'
 import AddRepoButton from '../add-repo-button'
 import Repository from '../repository'
 import RepositoryContext from '../../contexts/repositoryList'
+import RepoDetails from '../repo-details'
 
 function Dashboard() {
 
     const initialState=[];
     const [repoList, setRepoList] = useState(initialState);
+    const [showRepo, setShowRepo] = useState(-1);
 
     useEffect(()=>{
         console.log(repoList);
@@ -30,9 +32,12 @@ function Dashboard() {
                         </div>
                         <AddRepoButton />
                     </div>
-                    <div className="right--pane">
-                        Repo-details
-                    </div>
+                    {showRepo === -1 ?
+                        <div className="right--pane">
+                            Repo-details
+                        </div> :
+                        <RepoDetails />
+                    }
                 </div>
             </div>
         </RepositoryContext.Provider>
