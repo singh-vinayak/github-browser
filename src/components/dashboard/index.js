@@ -30,7 +30,6 @@ function Dashboard() {
                                 </div> :
                                 repoList.map((repo, i) => <Repository key={i} data={repo} />)}
                         </div>
-                        <AddRepoButton />
                     </div>
                     {showRepo === -1 ?
                         <div className="right--pane">
@@ -39,6 +38,7 @@ function Dashboard() {
                         <RepoDetails />
                     }
                 </div>
+                <AddRepoButton />
             </div>
         </RepositoryContext.Provider>
     );
