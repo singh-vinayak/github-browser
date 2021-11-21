@@ -1,9 +1,11 @@
 import React from 'react'
 
-function RepoDetails() {
+function RepoDetails({data}) {
+    console.log(data);
+
     return (
         <div className="right--pane">
-            Repo-details
+            {JSON.stringify(data)}
         </div>
     );
 }

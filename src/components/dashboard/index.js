@@ -28,14 +28,14 @@ function Dashboard() {
                                 <div className="repo">
                                     Repo will be here
                                 </div> :
-                                repoList.map((repo, i) => <Repository key={i} data={repo} />)}
+                                repoList.map((repo, i) => <Repository key={i} data={repo}  onClick={()=> setShowRepo(i)}/>)}
                         </div>
                     </div>
                     {showRepo === -1 ?
                         <div className="right--pane">
                             Repo-details
                         </div> :
-                        <RepoDetails />
+                        <RepoDetails data={repoList[showRepo]} />
                     }
                 </div>
                 <AddRepoButton />

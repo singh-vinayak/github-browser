@@ -49,7 +49,7 @@ export default function Modal({show, onClose})
                                     "name": name,
                                     "ownerName": org
                                 }
-                                setRepoList(prevArray => [...prevArray, newRepo]);
+                                setRepoList(prevArray => [...prevArray, data]);
                                 onClose();
                             })
                             .catch(error => {
