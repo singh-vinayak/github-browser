@@ -47,7 +47,7 @@ export default function Modal({show, onClose})
                             //console.log(`name : ${name} org : ${org}`)
                             handleSubmit()
                             .then(data =>{
-                                //console.log(data);
+                                console.log(data);
                                 setRepoList(prevArray => [...prevArray, data]);
                                 onClose();
                             })

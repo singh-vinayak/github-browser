@@ -114,11 +114,56 @@ button:focus{
 
 .right--pane{
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
   border: 1px solid rgb(255, 0, 0);
   width: 50%;
   height: 100%;
+}
+
+.top--row{
+  border: 1px solid white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  /* width: 100%; */
+  font-size: 0.70em;
+}
+
+.top--row p{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.top--row img{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 0 10px;
+}
+
+.delete--button{
+  margin-right: 10px;
+  padding: 10px 20px;
+  font-size: 14px;
+  color: rgb(46, 46, 46);
+  background-color: rgb(255, 255, 255);
+  border: none;
+  font-weight: 700;
+  border-radius: 15px;
+  transition: all 500ms ease-in-out;
+}
+
+.delete--button:hover,
+.delete--button:focus{
+  color: #eee;
+  background-color: rgb(221, 23, 23);
+}
+
+.detail-section{
+  border: 1px solid yellow;
 }
 
 .header{
@@ -190,5 +235,36 @@ button:focus{
 }
 
 .user-input-repo{
+  display: flex;
+  flex-flow: column wrap;
   cursor: pointer;
+  position: relative;
+  text-align: left;
+}
+
+.user-input-repo:hover,
+.user-input-repo:active{
+  background-color: #444444;
+}
+
+.user-input-repo::after{
+  content: "";
+  position: absolute;
+  border-top: 1px solid rgb(255, 255, 255);
+  bottom: 0;
+  width: 100%;
+  height: 0px;
+}
+
+.repo h4,
+.repo p{
+  margin: 4px 5px;
+}
+.repo h4{
+  text-transform: capitalize;
+}
+
+.repo p{
+  font-style: italic;
+  font-size: 0.5em;
 }
