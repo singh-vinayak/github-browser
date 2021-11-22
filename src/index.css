@@ -188,3 +188,7 @@ button:focus{
 #submit-form-btn{
   width:60px;
 }
+
+.user-input-repo{
+  cursor: pointer;
+}

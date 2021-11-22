@@ -12,7 +12,7 @@ function Dashboard() {
     const [showRepo, setShowRepo] = useState(-1);
 
     useEffect(()=>{
-        console.log(repoList);
+        setShowRepo(-1);
     },[repoList]);
 
     return (
@@ -35,7 +35,7 @@ function Dashboard() {
                         <div className="right--pane">
                             Repo-details
                         </div> :
-                        <RepoDetails data={repoList[showRepo]} />
+                        <RepoDetails data={repoList[showRepo]} id={showRepo}/>
                     }
                 </div>
                 <AddRepoButton />

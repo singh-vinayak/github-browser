@@ -1,11 +1,17 @@
-import React from 'react'
+import React,{ useContext } from 'react'
+import RepositoryContext from '../../contexts/repositoryList'
 
-function RepoDetails({data}) {
-    console.log(data);
+function RepoDetails({data, id}) {
+    if(data)
+        console.log(data);
+    const { setRepoList } = useContext(RepositoryContext);
 
     return (
         <div className="right--pane">
-            {JSON.stringify(data)}
+            <button onClick={() => {
+                setRepoList(ogList => ogList.filter(repo => repo.id!==data.id))
+            }}>Delete</button>
+            <p>Hello</p>
         </div>
     );
 }

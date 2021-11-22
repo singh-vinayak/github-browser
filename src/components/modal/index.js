@@ -11,10 +11,13 @@ export default function Modal({show, onClose})
     const { setRepoList } = useContext(RepositoryContext);
 
     useEffect(() => {
-        // console.log(name);
-        // console.log(org);
         setError('');
     }, [org, name]);
+
+    useEffect(() => {
+        setName('');
+        setOrg('');
+    }, [show]);
 
     if(!show){
         return null;
@@ -44,11 +47,7 @@ export default function Modal({show, onClose})
                             //console.log(`name : ${name} org : ${org}`)
                             handleSubmit()
                             .then(data =>{
-                                console.log(data);
-                                const newRepo = {
-                                    "name": name,
-                                    "ownerName": org
-                                }
+                                //console.log(data);
                                 setRepoList(prevArray => [...prevArray, data]);
                                 onClose();
                             })
