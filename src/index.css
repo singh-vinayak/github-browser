@@ -123,7 +123,6 @@ button:focus{
 }
 
 .top--row{
-  border: 1px solid white;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -163,7 +162,9 @@ button:focus{
 }
 
 .detail-section{
-  border: 1px solid yellow;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .header{
@@ -243,7 +244,7 @@ button:focus{
 }
 
 .user-input-repo:hover,
-.user-input-repo:active{
+.user-input-repo:focus{
   background-color: #444444;
 }
 
@@ -267,4 +268,56 @@ button:focus{
 .repo p{
   font-style: italic;
   font-size: 0.5em;
+}
+
+.view--buttons{
+  display: flex;
+  align-items: center;
+  font-size: 0.5em;
+  font-weight: 600;
+  position: relative;
+  height: 50px;
+}
+
+.view--buttons::after{
+  content: "";
+  position: absolute;
+  border-top: 1px solid #00a8ff;
+  bottom: 0px;
+  width: 100%;
+  height: 0px;
+}
+
+.list--button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  height: 100%;
+  cursor: pointer;
+  transition: all 500ms ease-in-out;
+}
+
+.view--buttons p:nth-child(2n+1) {
+  border-top-left-radius: 10px;
+}
+
+.view--buttons p:nth-child(1) {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 0;
+}
+
+.list--button:hover,
+.list--button:focus{
+  background-color: #0088cc;
+  color: #282c34;
+}
+
+.view--buttons p:nth-child(2n) {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.view--buttons .active{
+  background-color: #00a8ff;
 }
